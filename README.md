@@ -18,14 +18,13 @@
 A fully asynchronous Python 3.11+ tool that perfectly replicates the GATA.xyz AI model's functionality. This automation tool interacts with the GATA ecosystem with identical logic as the official GATA.xyz platform.
 
 ## Features ✨
-- 🔑 **License Management**: Secure licensing system with heartbeat verification
-- 🔐 **Authentication Flow**: Authentication with token management
+- ⏱️ **Random Breaks**: Setting breaks throughout the day to simulate real user behavior
+- 🔐 **Authentication**: Authentication with token management
 - 🤖 **AI Model Integration**: Local ONNX runtime for advanced AI model processing 
 - 🔄 **Asynchronous Operation**: Efficient concurrent processing with rate limiting
 - 🌐 **Proxy Support**: Per-account proxy assignment
 - 🔒 **Captcha Solving**: CapSolver integration for Turnstile
 - 🗄️ **Database Storage**: PostgreSQL for secure credential and token storage
-- 🌈 **Menu Interface**: Interactive CLI with rich formatting
 - 📊 **Stats Tracking**: Complete points and task completion tracking
 - 📜 **Comprehensive Logging**: Detailed error handling and process tracking
 
@@ -70,7 +69,13 @@ invite:
   use_database: false  # Set to true to source invites from the database instead of file
 
 farming:
+  keys_file: "data/farming.txt"
+  result_delay: 300
   capsolver_api_key: "YOUR_CAPSOLVER_API_KEY"
+  random_breaks_enabled: false  # Enable random breaks per day to mimic real user behavior
+  breaks_per_day: 3            # Number of breaks per 24h
+  min_break_duration: 300      # Minimum break duration in seconds
+  max_break_duration: 1800     # Maximum break duration in seconds
 ```
 
 ## Data Files Structure 📂
